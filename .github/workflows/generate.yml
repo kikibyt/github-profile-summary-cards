@@ -1,0 +1,21 @@
+name: GitHub Profile Summary Cards
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate Cards
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate GitHub Profile Summary Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        with:
+          USERNAME: kikibyt
